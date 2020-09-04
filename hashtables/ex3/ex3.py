@@ -1,8 +1,18 @@
+# python3 hashtables/ex3/ex3_tests.py -v
+
 def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    cache = {}
+    for ar in arrays:
+        for i in ar:
+            if i not in cache:
+                cache[i] = 1
+            else:
+                cache[i] += 1
+    
+    result = []
+    for key, value in cache.items():
+        if value >= len(arrays):
+            result.append(key)
 
     return result
 

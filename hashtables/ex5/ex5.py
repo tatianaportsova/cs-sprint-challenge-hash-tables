@@ -1,13 +1,17 @@
-# Your code here
-
+# python3 hashtables/ex5/ex5_tests.py -v
 
 
 def finder(files, queries):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    cache = {}
+    
+    for j in files:
+        if j not in cache:
+            for i in queries:
+                if i == j[-len(i):]:
+                    cache[j] = 1
 
+    result = list(cache.keys())
+                
     return result
 
 
